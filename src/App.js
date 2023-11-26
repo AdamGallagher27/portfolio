@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom'
+import ProjectShow from './pages/projects/Show'
+import ProjectIndex from './pages/projects/Index'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Navbar from './components/Navbar';
 import PageNotFound from './pages/PageNotFound';
-import NavigateExample from './pages/NavigateExample';
-
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -16,10 +17,11 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/nav-example' element={<NavigateExample />}/>
+          <Route path='/projects' element={<ProjectIndex />} />
+          <Route path='/projects/:slug' element={<ProjectShow />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
-        Foooter
+        <Footer />
       </Router>
     </>
   );
