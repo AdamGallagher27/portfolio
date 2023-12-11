@@ -5,19 +5,17 @@ const ProjectCard = ({ project }) => {
 
   const navigate = useNavigate()
 
-  useEffect(() => {
-    console.log(project)
-  }, [])
-
-  const handleClick = () => {
+  const navigateToShow = () => {
     navigate(`/projects/${project.slug}`, { replace: true })
   }
 
   return (
-    <div>
-      <p>{project.title}</p>
-      <button onClick={ handleClick }>See More</button>
-    </div>
+    <button onClick={navigateToShow} className="card lg:card-side bg-base-100 shadow-xl">
+      <figure><img src="https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg" alt="Album" /></figure>
+      <div className="card-body">
+        <h2 className="card-title">{project.title}</h2>
+      </div>
+    </button>
   )
 }
 
