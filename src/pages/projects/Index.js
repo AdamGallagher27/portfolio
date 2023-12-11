@@ -20,9 +20,11 @@ const Index = () => {
   })
 
   return (
-    <div>
-
-      projects
+    <div className='hero mt-10 mb-24'>
+      <div className='flex flex-col gap-8'>
+      <h1 className='text-5xl font-bold'>Projects</h1>
+      {projectCardComponents}
+      </div>
     </div>
   )
 }
