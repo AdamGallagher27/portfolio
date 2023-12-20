@@ -40,11 +40,25 @@ const getGitHubContributions = ( contributionSetter ) => {
   })
 }
 
+
+const returnProjectWithoutIdProperty = (response) => {
+  return Object.values(response)[0]
+}
+
 const getAllProjects = (projectsSetter) => {
   axios.get(PROJECTS_API)
     .then((response) => {
-
       projectsSetter(response.data)
+    })
+    .catch(error => {
+      console.error(error)
+    })
+}
+
+const getSingleProject = (slug, projectSetter) => {
+  axios.get(PROJECTS_API + `?orderBy="slug"&equalTo="${slug}"`)
+    .then((response) => {
+      projectSetter(returnProjectWithoutIdProperty(response.data))
     })
     .catch(error => {
       console.error(error)
@@ -53,6 +67,4 @@ const getAllProjects = (projectsSetter) => {
 
 
 
-
-
-export { getAllProjects, getGitHubContributions }
+export { getAllProjects, getGitHubContributions, getSingleProject }
