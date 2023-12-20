@@ -11,7 +11,12 @@ const ProjectCard = ({ project }) => {
 
   return (
     <button onClick={navigateToShow} className="card lg:card-side bg-base-100 shadow-xl">
-      <figure><img src="https://daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.jpg" alt="Album" /></figure>
+      <figure style={{
+        width: '400px',
+        height: '300px',
+      }}>
+        <img src={project.images[0].path} className='w-full h-full object-cover' alt="Album" />
+      </figure>
       <div className="card-body">
         <h2 className="card-title">{project.title}</h2>
       </div>
