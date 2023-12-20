@@ -6,9 +6,8 @@ const Footer = () => {
       <aside>
         <div className="text-sm breadcrumbs">
           <ul>
-            <li><a>Github</a></li>
-            <li><a>Linkedln</a></li>
-            {/* <li>Add Document</li> */}
+            <li><a href='https://github.com/AdamGallagher27'>Github</a></li>
+            <li><a href='https://www.linkedin.com/in/adam-gallagher-ba3830263/'>Linkedln</a></li>
           </ul>
         </div>
       </aside>
