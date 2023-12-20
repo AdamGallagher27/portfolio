@@ -20,7 +20,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "react-scripts build && firebase deploy",
-    "login": "firebase login"
+    "login": "firebase login",
+    "fb-init": "firebase init"
   },
   "eslintConfig": {
     "extends": [
